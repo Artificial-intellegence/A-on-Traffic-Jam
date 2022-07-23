@@ -1,0 +1,37 @@
+                             H E U R I S T I C S
+             Moves        Zero    Blocking   Better
+Puzzle       to Goal    expanded  expanded  expanded
+traffic00    7          233       60        34
+traffic02    9          2085      272       272
+traffic04    9          57        42        36
+traffic06    13         200       115       115
+traffic08    13         826       351       319
+traffic10    22         529       304       268
+
+                             H E U R I S T I C S
+             Moves     Displaced   Manhattan  Bonus
+Puzzle       to Goal    expanded   expanded   expanded
+fifteen00    4         5           4
+fifteen01    24        16008       1543
+fifteen02    24        17856       1027
+fifteen03    26        35089       417
+fifteen04    20        7337        625
+fifteen05    30        223612      574
+
+
+Complete the tables given above.
+
+
+How does your better heuristic improve on blocking (while maintaining
+admissibility)?
+
+Our better heuristic also factors in whether cars blocking the route of car0
+are also blocked themselves - therefore it will be higher than the blocking
+heuristic on some occasions. If cars blocking car0 are blocked themselves, then
+this will require additional moves in order to clear the path for car0.
+There is no getting around these moves - they must be done, therefore our better
+heuristic will still never overestimate the actual number of moves needed, thus
+guaranteeing admissibility.
+
+If you implemented the bonus heuristic, how does it improve on
+Manhattan (while maintaining admissibility)?
